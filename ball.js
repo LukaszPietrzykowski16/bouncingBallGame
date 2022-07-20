@@ -1,35 +1,50 @@
 const INIITAL_VELOCITY = .009
-const VELOCITY_INCREASE = 0.00001
+const VELOCITY_INCREASE = 0.000000000001
 
 export default class Ball {
+    // constructor of the ball
     constructor (ballElem){
         this.ballElem = ballElem
         this.default()
     }
-
+    // getting our x value of ball
     get x(){
         return parseFloat(getComputedStyle(this.ballElem).getPropertyValue("--x"))
     }
-
+    // setting our x value of ball
     set x(value) {
         this.ballElem.style.setProperty('--x', value)
     }
-
+    // getting our y value of ball
     get y(){
         return parseFloat(getComputedStyle(this.ballElem).getPropertyValue("--y"))
     }
-
+    // getting our y value of ball
     set y(value) {
         this.ballElem.style.setProperty('--y', value)
     }
 
+    // default position of the ball
     default(){
+        // setting up basic x and y we can delete this later i think 
+        /*
         this.x = 50
         this.y = 50
-
+        */
+       // setting up basic direction we can delete this later i think 
+        this.direction = { x: 0, y: 0}
+        // math.abs to always have value > 0, randomNumberBetween to make more random ways of setting up the way of ball behave
+        while (Math.abs(this.direction.x) <= 0.2 || Math.abs(this.direction.x) >= 0.9) {
+            const heading = randomNumberBetween(0, 2 * Math.PI)
+            // updating with sin or cos for some heading random number to go for 4 diffrent direction. for exmaple if we do only math.cos 2 times it will go only in 2 diffrent directions
+            this.direction = { x: Math.cos(heading), y: Math.sin(heading)}
+            
+        }
+        this.velocity = INIITAL_VELOCITY
        
     }
 
+    // updating position
     update(delta) {
         this.x += this.direction.x * this.velocity * delta
         this.y += this.direction.y * this.velocity * delta
@@ -38,3 +53,7 @@ export default class Ball {
    
 }
 
+// it returns random number min = 0, max = 2
+function randomNumberBetween(min, max) {
+    return Math.random() * (max - min) + min
+}
