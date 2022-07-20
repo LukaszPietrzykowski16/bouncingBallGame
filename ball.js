@@ -59,9 +59,11 @@ export default class Ball {
             this.direction.y *= -1
         }
         // left and right bouncing down
-        if (rect.right <= 0 || rect.left <= 0) {
+        if (rect.right <= 0 || rect.left >= window.innerWidth) {
             this.direction.x *= -1
         }
+
+      
     }
    
 }
