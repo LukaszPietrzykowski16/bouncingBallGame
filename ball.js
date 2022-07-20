@@ -1,15 +1,40 @@
-export default class Ball{
-    // basic setup of ball 
-    constructor (ballEllem){
-        this.ballEllem = ballEllem
+const INIITAL_VELOCITY = .009
+const VELOCITY_INCREASE = 0.00001
+
+export default class Ball {
+    constructor (ballElem){
+        this.ballElem = ballElem
+        this.default()
     }
 
-    // so here we are getting x values of the ball
-    get x() {
-        return parseFloat(getComputedStyle(this.ballEllem).getPropertyValue("--x"))
+    get x(){
+        return parseFloat(getComputedStyle(this.ballElem).getPropertyValue("--x"))
     }
 
-    set x (value){
-        this.ballEllem
+    set x(value) {
+        this.ballElem.style.setProperty('--x', value)
     }
+
+    get y(){
+        return parseFloat(getComputedStyle(this.ballElem).getPropertyValue("--y"))
+    }
+
+    set y(value) {
+        this.ballElem.style.setProperty('--y', value)
+    }
+
+    default(){
+        this.x = 50
+        this.y = 50
+
+       
+    }
+
+    update(delta) {
+        this.x += this.direction.x * this.velocity * delta
+        this.y += this.direction.y * this.velocity * delta
+        this.velocity += VELOCITY_INCREASE * delta
+    }
+   
 }
+

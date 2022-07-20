@@ -13,7 +13,7 @@ body {
     --x: 50;
     --y: 50;
 
-    left: calc(var(--x) * 1vh);
+    left: calc(var(--x) * 1vw);
     bottom: calc(var(--y) * 1vh);
     width: 2.5vh;
     height: 2.5vh;
