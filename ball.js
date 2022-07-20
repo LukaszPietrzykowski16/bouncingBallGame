@@ -69,7 +69,7 @@ export default class Ball {
             this.direction.x *= -1
         }
 
-        console.log(rect)
+        // colision with our platform 
         if (rect.left < rectPlatform.left + rectPlatform.width &&
             rect.left + rect.width > rectPlatform.left &&
             rect.top < rectPlatform.top + rectPlatform.height &&
