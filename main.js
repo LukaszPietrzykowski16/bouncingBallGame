@@ -9,7 +9,7 @@ function update(time){
     if (lastTime != null) {
         const delta = time - lastTime
         //ball.update(delta)
-        ball.update(delta)
+        ball.update(delta, platform)
     }
     lastTime = time
     // calling our requasted animation frame

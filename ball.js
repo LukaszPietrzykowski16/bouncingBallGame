@@ -1,5 +1,6 @@
 const INIITAL_VELOCITY = .039
 const VELOCITY_INCREASE = 0.000000000001
+const platform = document.querySelector('.platform')
 
 export default class Ball {
     // constructor of the ball
@@ -29,6 +30,10 @@ export default class Ball {
         return this.ballElem.getBoundingClientRect()
     }
 
+    rectPlatform(){
+        return platform.getBoundingClientRect()
+    }
+
     // default position of the ball
     default(){
         // setting up basic x and y we can delete this later i think 
@@ -53,6 +58,7 @@ export default class Ball {
         this.y += this.direction.y * this.velocity * delta
         this.velocity += VELOCITY_INCREASE * delta
         const rect = this.rect()
+        const rectPlatform = this.rectPlatform()
 
         // top bouncing down
         if (rect.top <= 0) {
@@ -63,6 +69,13 @@ export default class Ball {
             this.direction.x *= -1
         }
 
+        console.log(rect)
+        if (rect.left < rectPlatform.left + rectPlatform.width &&
+            rect.left + rect.width > rectPlatform.left &&
+            rect.top < rectPlatform.top + rectPlatform.height &&
+            rect.height + rect.top > rectPlatform.top) {
+            this.direction.y *= -1
+         }
       
     }
    
@@ -72,3 +85,4 @@ export default class Ball {
 function randomNumberBetween(min, max) {
     return Math.random() * (max - min) + min
 }
+
