@@ -1,4 +1,4 @@
-const INIITAL_VELOCITY = .009
+const INIITAL_VELOCITY = .039
 const VELOCITY_INCREASE = 0.000000000001
 
 export default class Ball {
@@ -24,13 +24,16 @@ export default class Ball {
         this.ballElem.style.setProperty('--y', value)
     }
 
+    rect(){
+        // The Element.getBoundingClientRect() method returns a DOMRect object providing information about the size of an element and its position relative to the viewport.
+        return this.ballElem.getBoundingClientRect()
+    }
+
     // default position of the ball
     default(){
         // setting up basic x and y we can delete this later i think 
-        /*
         this.x = 50
         this.y = 50
-        */
        // setting up basic direction we can delete this later i think 
         this.direction = { x: 0, y: 0}
         // math.abs to always have value > 0, randomNumberBetween to make more random ways of setting up the way of ball behave
@@ -49,6 +52,16 @@ export default class Ball {
         this.x += this.direction.x * this.velocity * delta
         this.y += this.direction.y * this.velocity * delta
         this.velocity += VELOCITY_INCREASE * delta
+        const rect = this.rect()
+
+        // top bouncing down
+        if (rect.top <= 0) {
+            this.direction.y *= -1
+        }
+        // left and right bouncing down
+        if (rect.right <= 0 || rect.left <= 0) {
+            this.direction.x *= -1
+        }
     }
    
 }
