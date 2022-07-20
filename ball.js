@@ -53,7 +53,7 @@ export default class Ball {
     }
 
     // updating position
-    update(delta) {
+    update(delta, blocks) {
         this.x += this.direction.x * this.velocity * delta
         this.y += this.direction.y * this.velocity * delta
         this.velocity += VELOCITY_INCREASE * delta
@@ -76,7 +76,11 @@ export default class Ball {
             rect.height + rect.top > rectPlatform.top) {
             this.direction.y *= -1
          }
-      
+         /*
+        if (blocks.some(b => isColision(b, rect))) {
+            console.log(b)
+        }
+      */
     }
    
 }
@@ -86,3 +90,11 @@ function randomNumberBetween(min, max) {
     return Math.random() * (max - min) + min
 }
 
+function isColision(exactBlock, exactBall){
+    return (
+       exactBlock.left <= exactBall.right &&
+       exactBlock.right <= exactBall.left &&
+       exactBlock.top <= exactBall.bottom &&
+       exactBlock.bottom <= exactBall.top 
+    )
+}

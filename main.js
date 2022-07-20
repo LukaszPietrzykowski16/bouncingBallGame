@@ -1,15 +1,17 @@
 import Ball from './Ball.js'
 
 const ball = new Ball(document.querySelector('.ball'))
+const blocks = document.querySelectorAll('.block')
 
 let lastTime
 const platform = document.querySelector('.platform')
+
+
 // update our animation frame to lanuch a game
 function update(time){
     if (lastTime != null) {
         const delta = time - lastTime
-        //ball.update(delta)
-        ball.update(delta, platform)
+        ball.update(delta, blocks)
     }
     lastTime = time
     // calling our requasted animation frame
