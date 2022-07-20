@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(32, 29, 29);
+    overflow: hidden;
+}
+
+.ball {
+    --x: 50;
+    --y: 50;
+
+    left: calc(var(--x) * 1vh);
+    bottom: calc(var(--y) * 1vh);
+    width: 2.5vh;
+    height: 2.5vh;
+    border-radius: 50%;
+    transform: translate(-50%);
+    position: absolute;
+    background-color: grey;
+}
+
+.platform {
+    --platfposit: 0;
+    --platfposit2: 0;
+    background-color: grey;
+    position: absolute;
+    left: calc(var(--platfposit) * 1vh);
+    bottom: calc(var(--platfposit2) * 1vh);
+    width: 10vw;
+    height: 2vh;
+    margin-bottom: 20px;
+}
