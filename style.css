@@ -43,6 +43,14 @@ body {
     grid-row-gap: 0px;
 }
 
+.block {
+    background-color: rgb(141, 141, 141);
+    width: 50vw;
+    height: 4vh;
+    margin: 10px;
+}
+
+
 .block1 {
     background-color: rgb(141, 141, 141);
     width: 50vw;

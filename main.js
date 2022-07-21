@@ -3,6 +3,8 @@ import Block from './block.js'
 
 const ball = new Ball(document.querySelector('.ball'))
 const blocks1Ball = new Ball(document.querySelector('.block1'))
+const blocks = document.querySelectorAll('.block')
+const eachBlock = blocks.forEach(el => el = new Ball(document.querySelector('.block')));
 const blocks2Ball = new Ball(document.querySelector('.block2'))
 const blocks1 = new Block(document.querySelector('.block1'))
 const blocks2 = new Block(document.querySelector('.block2'))
@@ -16,9 +18,12 @@ const platform = document.querySelector('.platform')
 function update(time){
     if (lastTime != null) {
         const delta = time - lastTime
+        console.log(eachBlock)
         ball.update(delta, [blocks1Ball.rect(), blocks2Ball.rect()])
+        /*
         blocks2.changeColor([blocks1Ball.rect(), blocks2Ball.rect()])
         blocks1.changeColor([blocks1Ball.rect(), blocks2Ball.rect()])
+        */
     }
     lastTime = time
     // calling our requasted animation frame
