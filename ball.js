@@ -1,6 +1,7 @@
 const INIITAL_VELOCITY = .039
 const VELOCITY_INCREASE = 0.000000000001
 const platform = document.querySelector('.platform')
+const block1 = document.querySelector('.block2')
 
 export default class Ball {
     // constructor of the ball
@@ -78,6 +79,7 @@ export default class Ball {
          }
          if (blocks.some(r => isColision(r, rect))) {
             this.direction.y *= -1
+            block1.style.backgroundColor = 'red'
         }
     }
    
@@ -94,6 +96,7 @@ function isColision(rect1, rect2){
         rect1.left + rect1.width > rect2.left &&
         rect1.top < rect2.top + rect2.height &&
         rect1.height + rect1.top > rect2.top
+      
      )
 }
 

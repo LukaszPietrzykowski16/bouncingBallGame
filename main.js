@@ -6,7 +6,7 @@ const blocks2 = new Ball(document.querySelector('.block2'))
 
 let lastTime
 const platform = document.querySelector('.platform')
-
+const block1 = document.querySelector('.block1')
 
 // update our animation frame to lanuch a game
 function update(time){
