@@ -7,6 +7,7 @@ const blocks2Ball = new Ball(document.querySelector('.block2'))
 const blocks1 = new Block(document.querySelector('.block1'))
 const blocks2 = new Block(document.querySelector('.block2'))
 
+
 let lastTime
 const platform = document.querySelector('.platform')
 
@@ -16,6 +17,7 @@ function update(time){
     if (lastTime != null) {
         const delta = time - lastTime
         ball.update(delta, [blocks1Ball.rect(), blocks2Ball.rect()])
+        blocks2.changeColor([blocks1Ball.rect(), blocks2Ball.rect()])
         blocks1.changeColor([blocks1Ball.rect(), blocks2Ball.rect()])
     }
     lastTime = time
