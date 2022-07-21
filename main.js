@@ -1,7 +1,8 @@
 import Ball from './Ball.js'
 
 const ball = new Ball(document.querySelector('.ball'))
-const blocks = document.querySelectorAll('.block')
+const blocks1 = new Ball(document.querySelector('.block1'))
+const blocks2 = new Ball(document.querySelector('.block2'))
 
 let lastTime
 const platform = document.querySelector('.platform')
@@ -11,20 +12,13 @@ const platform = document.querySelector('.platform')
 function update(time){
     if (lastTime != null) {
         const delta = time - lastTime
-        ball.update(delta, blocks)
+        ball.update(delta, [blocks1.rect(), blocks2.rect()])
     }
     lastTime = time
     // calling our requasted animation frame
     window.requestAnimationFrame(update)
 
 }
-    
-    
-
-
-
-
-
 
 /*
 const platformStyle = getComputedStyle(platform).getPropertyValue("--platfposit")

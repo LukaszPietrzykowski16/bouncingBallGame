@@ -76,11 +76,9 @@ export default class Ball {
             rect.height + rect.top > rectPlatform.top) {
             this.direction.y *= -1
          }
-         /*
-        if (blocks.some(b => isColision(b, rect))) {
-            console.log(b)
+         if (blocks.some(r => isColision(r, rect))) {
+            this.direction.y *= -1
         }
-      */
     }
    
 }
@@ -90,11 +88,12 @@ function randomNumberBetween(min, max) {
     return Math.random() * (max - min) + min
 }
 
-function isColision(exactBlock, exactBall){
+function isColision(rect1, rect2){
     return (
-       exactBlock.left <= exactBall.right &&
-       exactBlock.right <= exactBall.left &&
-       exactBlock.top <= exactBall.bottom &&
-       exactBlock.bottom <= exactBall.top 
-    )
+        rect1.left < rect2.left + rect2.width &&
+        rect1.left + rect1.width > rect2.left &&
+        rect1.top < rect2.top + rect2.height &&
+        rect1.height + rect1.top > rect2.top
+     )
 }
+
