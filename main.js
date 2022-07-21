@@ -1,18 +1,22 @@
-import Ball from './Ball.js'
+import Ball from './ball.js'
+import Block from './block.js'
 
 const ball = new Ball(document.querySelector('.ball'))
-const blocks1 = new Ball(document.querySelector('.block1'))
-const blocks2 = new Ball(document.querySelector('.block2'))
+const blocks1Ball = new Ball(document.querySelector('.block1'))
+const blocks2Ball = new Ball(document.querySelector('.block2'))
+const blocks1 = new Block(document.querySelector('.block1'))
+const blocks2 = new Block(document.querySelector('.block2'))
 
 let lastTime
 const platform = document.querySelector('.platform')
-const block1 = document.querySelector('.block1')
+
 
 // update our animation frame to lanuch a game
 function update(time){
     if (lastTime != null) {
         const delta = time - lastTime
-        ball.update(delta, [blocks1.rect(), blocks2.rect()])
+        ball.update(delta, [blocks1Ball.rect(), blocks2Ball.rect()])
+        blocks1.changeColor([blocks1Ball.rect(), blocks2Ball.rect()])
     }
     lastTime = time
     // calling our requasted animation frame

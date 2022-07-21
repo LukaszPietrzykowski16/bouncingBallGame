@@ -79,7 +79,7 @@ export default class Ball {
          }
          if (blocks.some(r => isColision(r, rect))) {
             this.direction.y *= -1
-            block1.style.backgroundColor = 'red'
+            console.log(this)
         }
     }
    
