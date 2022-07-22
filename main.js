@@ -11,10 +11,8 @@ let lastTime
 
 blocks1.createBlock()
 window.addEventListener('DOMContentLoaded', () => {
-    
     // pushing to the 
     const newArr = utils()
-    console.log(newArr)
     function update(time){
         if (lastTime != null) {
           
@@ -24,8 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
             ball.update(delta, newArr)
     
             /*
-            blocks2.changeColor(blockArray)
-            blocks1.changeColor(blockArray)
+            blocks1.changeColor(newArr)
             */
         }
         lastTime = time

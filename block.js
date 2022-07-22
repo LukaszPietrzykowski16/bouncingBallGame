@@ -11,10 +11,12 @@ export default class Block {
         return ball.getBoundingClientRect()
     }
 
+    // creating blocks
     createBlock() {
         for(let i=0; i<43; i++) {
             const blockDiv = document.createElement("div");
             blockDiv.classList.add(`block${i}`)
+            // i can change style later
             blockDiv.style.backgroundColor = 'rgb(51, 114, 136)' 
             blockDiv.style.width = '10vw'
             blockDiv.style.height = '4vh'
@@ -24,7 +26,7 @@ export default class Block {
         
     }
 
-
+    // removing 
     changeColor(blocks) {
         const rect = this.rectBall()
         if (blocks.some(r => isColision(r, rect))) {

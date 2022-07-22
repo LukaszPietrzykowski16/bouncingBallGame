@@ -3,41 +3,31 @@ const ball = new Ball(document.querySelector('.ball'))
 
 const blocks2Ball = new Ball(document.querySelector('.block2'))
 
-
-
-//const div_array = [...div_list]; 
-
 const arr = []
 
-function test() {
+
+// 
+function gettingArray() {
+    // getting all divs
     const div_list = document.querySelectorAll('div'); 
+    // loop for all divs that are created in blocks.js
     for (let i=0; i<div_list.length; i++){
         const nameOfClass = div_list[i].className
-
+        // getting all classes
         const test = document.querySelector(`.${nameOfClass}`)
-        console.log( test)
-            
+        
+        
         const block = new Ball(test)
+        // pushing array with rect metod to the arr array
         arr.push(block.rect())
     }
-    console.log(arr)
     return arr
     
 }
 
-/*
-
-const nameOfClass = div_list[0].className
-
-const test = document.querySelector(`.${nameOfClass}`)
-console.log( test)
-    
-const blocks1Ball = new Ball(test)
-
-*/
 
 function utils() {
-    return test()
+    return gettingArray()
 }
 
 
