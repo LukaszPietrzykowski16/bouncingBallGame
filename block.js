@@ -11,6 +11,11 @@ export default class Block {
         return ball.getBoundingClientRect()
     }
 
+    createBlock() {
+        const blockDiv = document.createElement("div");
+        blockDiv.classList.add('block')
+        document.body.append(blockDiv)
+    }
 
 
     changeColor(blocks) {
