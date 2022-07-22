@@ -12,9 +12,13 @@ export default class Block {
     }
 
     createBlock() {
-        const blockDiv = document.createElement("div");
-        blockDiv.classList.add('block')
-        document.body.append(blockDiv)
+        for(let i=0; i<10; i++) {
+            const blockDiv = document.createElement("div");
+            blockDiv.classList.add(`block${i}`)
+            blockDiv.classList.add(`colors`)
+            document.body.append(blockDiv)
+        }
+        
     }
 
 

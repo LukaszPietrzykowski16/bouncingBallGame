@@ -3,38 +3,48 @@ import Block from './block.js'
 
 const ball = new Ball(document.querySelector('.ball'))
 const blocks1Ball = new Ball(document.querySelector('.block1'))
-
-
+const blocks = document.querySelectorAll('.block')
+const eachBlock = blocks.forEach(el => el = new Ball(document.querySelector('.block')));
 const blocks2Ball = new Ball(document.querySelector('.block2'))
 const blocks1 = new Block(document.querySelector('.block1'))
 const blocks2 = new Block(document.querySelector('.block2'))
 
-window.addEventListener('DOMContentLoaded', () => {
-    for(let i=0; i < 10; i++){
-        blocks1.createBlock() 
-    }
-})
+// array of our blocks
+const arrayOfBlocks = []
+
+
 
 let lastTime
 const platform = document.querySelector('.platform')
 
+window.addEventListener('DOMContentLoaded', () => {
+    blocks1.createBlock()
+    arrayOfBlocks.push(blocks1Ball.rect(), blocks2Ball.rect())
+    function update(time){
+        if (lastTime != null) {
+          
+            
+            const delta = time - lastTime
+        
+            ball.update(delta, arrayOfBlocks)
+    
+            /*
+            blocks2.changeColor(blockArray)
+            blocks1.changeColor(blockArray)
+            */
+        }
+        lastTime = time
+        // calling our requasted animation frame
+        window.requestAnimationFrame(update)
+    
+    }
+    window.requestAnimationFrame(update)
+})
+
+
 
 // update our animation frame to lanuch a game
-function update(time){
-    if (lastTime != null) {
-        const delta = time - lastTime
-        
-        ball.update(delta, [blocks1Ball.rect(), blocks2Ball.rect()])
-        /*
-        blocks2.changeColor([blocks1Ball.rect(), blocks2Ball.rect()])
-        blocks1.changeColor([blocks1Ball.rect(), blocks2Ball.rect()])
-        */
-    }
-    lastTime = time
-    // calling our requasted animation frame
-    window.requestAnimationFrame(update)
 
-}
 
 /*
 const platformStyle = getComputedStyle(platform).getPropertyValue("--platfposit")
@@ -45,4 +55,3 @@ document.addEventListener('mousemove', e => {
     platform.style.left = e.x + 'px'
 })
 
-window.requestAnimationFrame(update)

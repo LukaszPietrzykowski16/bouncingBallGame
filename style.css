@@ -51,15 +51,8 @@ body {
 }
 
 
-.block1 {
-    background-color: rgb(141, 141, 141);
-    width: 50vw;
-    height: 4vh;
-    margin: 10px;
-}
-
-.block2 {
-    background-color: rgb(141, 141, 141);
+.colors {
+    background-color: rgb(51, 114, 136);
     width: 50vw;
     height: 4vh;
     margin: 10px;
