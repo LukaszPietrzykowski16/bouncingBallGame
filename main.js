@@ -2,28 +2,19 @@ import Ball from './ball.js'
 import Block from './block.js'
 import utils from './utils.js'
 const ball = new Ball(document.querySelector('.ball'))
-
-/*
-// i wanted to do something like this but i it wasn't working
-const blocks = document.querySelectorAll('.block')
-const eachBlock = blocks.forEach(el => el = new Ball(document.querySelector('.block')));
-*/
-
+const platform = document.querySelector('.platform')
 const blocks1 = new Block(document.querySelector('.block1'))
-const blocks2 = new Block(document.querySelector('.block2'))
-
-// array of our blocks
-const arrayOfBlocks = []
 
 
 
 let lastTime
-const platform = document.querySelector('.platform')
+
 blocks1.createBlock()
 window.addEventListener('DOMContentLoaded', () => {
-   
+    
     // pushing to the 
     const newArr = utils()
+    console.log(newArr)
     function update(time){
         if (lastTime != null) {
           

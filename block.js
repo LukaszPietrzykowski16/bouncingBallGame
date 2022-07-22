@@ -12,11 +12,14 @@ export default class Block {
     }
 
     createBlock() {
-        for(let i=0; i<10; i++) {
+        for(let i=0; i<43; i++) {
             const blockDiv = document.createElement("div");
             blockDiv.classList.add(`block${i}`)
-            blockDiv.setAttribute("id",`colors${i}`);
-            document.body.append(blockDiv)
+            blockDiv.style.backgroundColor = 'rgb(51, 114, 136)' 
+            blockDiv.style.width = '10vw'
+            blockDiv.style.height = '4vh'
+            blockDiv.style.margin = '10px'
+            document.querySelector('main').append(blockDiv)
         }
         
     }
