@@ -8,6 +8,7 @@ const ball = new Ball(document.querySelector('.ball'))
 const blocks = document.querySelectorAll('.block')
 const eachBlock = blocks.forEach(el => el = new Ball(document.querySelector('.block')));
 */
+
 const blocks1 = new Block(document.querySelector('.block1'))
 const blocks2 = new Block(document.querySelector('.block2'))
 
@@ -29,7 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
             
             const delta = time - lastTime
         
-            //ball.update(delta, arrayOfBlocks)
+            ball.update(delta, arrayOfBlocks)
     
             /*
             blocks2.changeColor(blockArray)

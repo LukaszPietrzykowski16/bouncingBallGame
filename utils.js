@@ -11,9 +11,9 @@ const nameOfClass = div_list[0].className
 const test = document.querySelector(`.${nameOfClass}`)
 console.log( test)
     
+const blocks1Ball = new Ball(test)
 
-
-
+// i need to do loop through every ball
 
 // const blocks1Ball = new Ball(document.querySelector(`.${nameOfClass}`))
 
