@@ -19,18 +19,18 @@ const arrayOfBlocks = []
 
 let lastTime
 const platform = document.querySelector('.platform')
-
+blocks1.createBlock()
 window.addEventListener('DOMContentLoaded', () => {
-    blocks1.createBlock()
+   
     // pushing to the 
-    arrayOfBlocks.push(utils())
+    const newArr = utils()
     function update(time){
         if (lastTime != null) {
           
             
             const delta = time - lastTime
         
-            ball.update(delta, arrayOfBlocks)
+            ball.update(delta, newArr)
     
             /*
             blocks2.changeColor(blockArray)

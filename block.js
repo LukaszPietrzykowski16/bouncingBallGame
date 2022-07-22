@@ -15,7 +15,7 @@ export default class Block {
         for(let i=0; i<10; i++) {
             const blockDiv = document.createElement("div");
             blockDiv.classList.add(`block${i}`)
-            blockDiv.classList.add(`colors`)
+            blockDiv.setAttribute("id",`colors${i}`);
             document.body.append(blockDiv)
         }
         

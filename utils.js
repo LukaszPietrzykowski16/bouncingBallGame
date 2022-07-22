@@ -1,10 +1,31 @@
 import Ball from './ball.js'
 const ball = new Ball(document.querySelector('.ball'))
-// const blocks1Ball = new Ball(document.querySelector('.block1'))
+
 const blocks2Ball = new Ball(document.querySelector('.block2'))
 
-const div_list = document.querySelectorAll('div'); 
+
+
 //const div_array = [...div_list]; 
+
+const arr = []
+
+function test() {
+    const div_list = document.querySelectorAll('div'); 
+    for (let i=0; i<div_list.length; i++){
+        const nameOfClass = div_list[i].className
+
+        const test = document.querySelector(`.${nameOfClass}`)
+        console.log( test)
+            
+        const block = new Ball(test)
+        arr.push(block.rect())
+    }
+    console.log(arr)
+    return arr
+    
+}
+
+/*
 
 const nameOfClass = div_list[0].className
 
@@ -13,18 +34,10 @@ console.log( test)
     
 const blocks1Ball = new Ball(test)
 
-// i need to do loop through every ball
-
-// const blocks1Ball = new Ball(document.querySelector(`.${nameOfClass}`))
-
-//const test = document.querySelector(`${div_list[0]}`)
-//console.log(test)
-
-// const blocks1Ball = new Ball(document.querySelector(`${div_array[0]}`))
-
+*/
 
 function utils() {
-    return blocks1Ball.rect(), blocks2Ball.rect()
+    return test()
 }
 
 

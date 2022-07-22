@@ -51,14 +51,8 @@ body {
 }
 
 
-.colors {
-    background-color: rgb(51, 114, 136);
-    width: 50vw;
-    height: 4vh;
-    margin: 10px;
-}
 
-#colors {
+#colors, #colors2, #colors3, #colors4, #colors5, #colors6, #colors7   {
     background-color: rgb(51, 114, 136);
     width: 50vw;
     height: 4vh;
