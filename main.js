@@ -1,11 +1,13 @@
 import Ball from './ball.js'
 import Block from './block.js'
-
+import utils from './utils.js'
 const ball = new Ball(document.querySelector('.ball'))
-const blocks1Ball = new Ball(document.querySelector('.block1'))
+
+/*
+// i wanted to do something like this but i it wasn't working
 const blocks = document.querySelectorAll('.block')
 const eachBlock = blocks.forEach(el => el = new Ball(document.querySelector('.block')));
-const blocks2Ball = new Ball(document.querySelector('.block2'))
+*/
 const blocks1 = new Block(document.querySelector('.block1'))
 const blocks2 = new Block(document.querySelector('.block2'))
 
@@ -19,14 +21,15 @@ const platform = document.querySelector('.platform')
 
 window.addEventListener('DOMContentLoaded', () => {
     blocks1.createBlock()
-    arrayOfBlocks.push(blocks1Ball.rect(), blocks2Ball.rect())
+    // pushing to the 
+    arrayOfBlocks.push(utils())
     function update(time){
         if (lastTime != null) {
           
             
             const delta = time - lastTime
         
-            ball.update(delta, arrayOfBlocks)
+            //ball.update(delta, arrayOfBlocks)
     
             /*
             blocks2.changeColor(blockArray)
