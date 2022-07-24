@@ -1,6 +1,7 @@
 import Ball from './ball.js'
 import Block from './block.js'
 import utils from './utils.js'
+import change from './change.js'
 const ball = new Ball(document.querySelector('.ball'))
 const platform = document.querySelector('.platform')
 const blocks1 = new Block(document.querySelector('.block1'))
