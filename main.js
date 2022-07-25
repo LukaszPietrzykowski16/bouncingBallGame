@@ -5,6 +5,9 @@ import change from './change.js'
 const ball = new Ball(document.querySelector('.ball'))
 const platform = document.querySelector('.platform')
 const blocks1 = new Block(document.querySelector('.block1'))
+const blocks2 = new Block(document.querySelector('.block2'))
+const blocks3 = new Block(document.querySelector('.block3'))
+const blocks4 = new Block(document.querySelector('.block4'))
 
 
 
@@ -22,9 +25,13 @@ window.addEventListener('DOMContentLoaded', () => {
         
             ball.update(delta, newArr)
     
-            /*
-            blocks1.changeColor(newArr)
-            */
+            const allBlocks = document.querySelectorAll('div')
+            
+            change(allBlocks)
+    
+            //change()
+
+            
         }
         lastTime = time
         // calling our requasted animation frame
