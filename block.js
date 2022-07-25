@@ -5,6 +5,9 @@ export default class Block {
         this.blockElem = blockElem
     }
 
+    rectBlocks() {
+        return this.blockElem.getBoundingClientRect()
+    }
 
 
     rectBall() {
@@ -30,6 +33,7 @@ export default class Block {
     changeColor(blocks) {
         const rect = this.rectBall()
         if (blocks.some(r => isColision(r, rect))) {
+            console.log(this.blockElem)
             this.blockElem.remove()
         }
     }

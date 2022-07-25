@@ -79,8 +79,15 @@ export default class Ball {
          }
          if (blocks.some(r => isColision(r, rect))) {
             this.direction.y *= -1
-
+           
         }
+    
+        /*
+        if (test.some(r => console.log(r))) {
+            
+           
+        }
+      */
     }
    
 }
