@@ -4,10 +4,19 @@
     box-sizing: border-box;
 }
 
+:root {
+    --firstValue: ;
+    --secondValue: 255;
+    --thirdValue: 98;
+    --forthValue: 30;
+    --fifthValue: 0;
+    --sixthValue: 255;
+}
+
 body {
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(45deg, rgb(0, 255, 51), rgb(30, 0, 255));
+    background-image: linear-gradient(45deg, rgb(var(--firstValue), var(--secondValue), var(--thirdValue)), rgb(var(--forthValue), var(--fifthValue), var(--sixthValue)));
     overflow: hidden;
 }
 

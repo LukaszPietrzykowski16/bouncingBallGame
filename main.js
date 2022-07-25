@@ -1,7 +1,7 @@
 import Ball from './ball.js'
 import Block from './block.js'
 import rem from './rem.js'
-
+import background from './background.js'
 import change from './change.js'
 const ball = new Ball(document.querySelector('.ball'))
 const platform = document.querySelector('.platform')
@@ -10,13 +10,14 @@ const blocks2 = new Block(document.querySelector('.block2'))
 const blocks3 = new Block(document.querySelector('.block3'))
 const blocks4 = new Block(document.querySelector('.block4'))
 
-let aaa
+
 
 let lastTime
 
-blocks1.createBlock()
+
 window.addEventListener('DOMContentLoaded', () => {
-    // pushing to the 
+    blocks1.createBlock()
+    
 
     const newChange = change()
 
@@ -25,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
   
     function update(time){
         if (lastTime != null) {
-         
+            background()
             const delta = time - lastTime
             rem(newChange, ball.rect())
             ball.update(delta, newChange)
