@@ -24,10 +24,9 @@ function rem(blocksRect, ballRect) {
          for (let i=0; i<blocksRect.length; i++) {
             
             if (blocksRect[i].left === leftValue && blocksRect[i].right === rightValue && blocksRect[i].top === topValue && blocksRect[i].bottom === bottomValue) {
-                //blocksRect.splice(i, 1)
+                blocksRect.splice(i, 1)
                 allBlocks[i].remove()
-                va(i)
-                return i
+                
             }
          }
          
@@ -37,10 +36,4 @@ function rem(blocksRect, ballRect) {
 
 
 
-function va(i){
-    console.log(typeof(i))
-    return i
-}
-
-
-export {rem, va}
+export default rem

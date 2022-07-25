@@ -1,7 +1,6 @@
 import Ball from './ball.js'
 import Block from './block.js'
-import utils from './utils.js'
-import {rem, va} from './rem.js'
+import rem from './rem.js'
 
 import change from './change.js'
 const ball = new Ball(document.querySelector('.ball'))
@@ -18,10 +17,10 @@ let lastTime
 blocks1.createBlock()
 window.addEventListener('DOMContentLoaded', () => {
     // pushing to the 
-    const newArr = utils()
+
     const newChange = change()
-    
-    newArr.splice(1, 1)
+
+
     
   
     function update(time){
@@ -29,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
          
             const delta = time - lastTime
             rem(newChange, ball.rect())
-            ball.update(delta, newArr)
+            ball.update(delta, newChange)
             
             
         }
@@ -42,7 +41,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 })
 
-console.log(va())
+
 
 // update our animation frame to lanuch a game
 
