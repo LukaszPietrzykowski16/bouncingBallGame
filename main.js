@@ -17,15 +17,17 @@ let lastTime
 blocks1.createBlock()
 window.addEventListener('DOMContentLoaded', () => {
     // pushing to the 
+    
     const newArr = utils()
     const newChange = change()
-    
+  
     function update(time){
         if (lastTime != null) {
             const delta = time - lastTime
-            ball.update(delta, newArr)
+            
             rem(newChange, ball.rect())
-          
+            ball.update(delta, newArr)
+            
             
             
         }

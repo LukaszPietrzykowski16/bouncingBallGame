@@ -1,10 +1,11 @@
+import blo from '/blo.js'
 
 
 function rem(blocksRect, ballRect) {
     const allBlocks = document.querySelectorAll('div')
 
     if (blocksRect.some(r => isColision(r, ballRect))) {
-        
+    
     }
 
     function isColision(rect1, rect2){
@@ -25,13 +26,14 @@ function rem(blocksRect, ballRect) {
          for (let i=0; i<blocksRect.length; i++) {
             
             if (blocksRect[i].left === leftValue && blocksRect[i].right === rightValue && blocksRect[i].top === topValue && blocksRect[i].bottom === bottomValue) {
+                blocksRect.splice(i, 1)
                 allBlocks[i].remove()
+                blo(blocksRect)
             }
          }
      }
      
 }
-
 
 
 export default rem

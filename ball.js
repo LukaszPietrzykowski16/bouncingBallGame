@@ -1,7 +1,9 @@
-const INIITAL_VELOCITY = .039
+import blo from '/blo.js'
+const INIITAL_VELOCITY = .4
 const VELOCITY_INCREASE = 0.000000000001
 const platform = document.querySelector('.platform')
-const block1 = document.querySelector('.block2')
+const bruh = blo()
+console.log(bruh)
 
 export default class Ball {
     // constructor of the ball
@@ -37,9 +39,7 @@ export default class Ball {
 
     // default position of the ball
     default(){
-        // setting up basic x and y we can delete this later i think 
-        this.x = 50
-        this.y = 50
+    
        // setting up basic direction we can delete this later i think 
         this.direction = { x: 0, y: 0}
         // math.abs to always have value > 0, randomNumberBetween to make more random ways of setting up the way of ball behave
@@ -77,6 +77,7 @@ export default class Ball {
             rect.height + rect.top > rectPlatform.top) {
             this.direction.y *= -1
          }
+    
          if (blocks.some(r => isColision(r, rect))) {
             this.direction.y *= -1
            

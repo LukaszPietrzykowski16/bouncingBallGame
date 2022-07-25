@@ -30,7 +30,7 @@ body {
     position: absolute;
     left: calc(var(--platfposit) * 1vh);
     bottom: calc(var(--platfposit2) * 1vh);
-    width: 10vw;
+    width: 100vw;
     height: 2vh;
     margin-bottom: 20px;
 }
@@ -41,8 +41,7 @@ main {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(9, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;  
+   
 }
 
 
