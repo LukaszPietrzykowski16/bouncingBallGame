@@ -1,5 +1,3 @@
-import blo from '/blo.js'
-
 
 function rem(blocksRect, ballRect) {
     const allBlocks = document.querySelectorAll('div')
@@ -26,14 +24,23 @@ function rem(blocksRect, ballRect) {
          for (let i=0; i<blocksRect.length; i++) {
             
             if (blocksRect[i].left === leftValue && blocksRect[i].right === rightValue && blocksRect[i].top === topValue && blocksRect[i].bottom === bottomValue) {
-                blocksRect.splice(i, 1)
+                //blocksRect.splice(i, 1)
                 allBlocks[i].remove()
-                blo(blocksRect)
+                va(i)
+                return i
             }
          }
+         
      }
-     
+    
 }
 
 
-export default rem
+
+function va(i){
+    console.log(typeof(i))
+    return i
+}
+
+
+export {rem, va}
