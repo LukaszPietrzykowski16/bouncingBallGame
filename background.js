@@ -5,6 +5,9 @@ let i4 = getRandomInt(0, 255);
 let i5 = getRandomInt(0, 255);
 let i6 = getRandomInt(0, 255);
 
+// i want to go for blue sky + purple look but i will go it tommorow
+// radial-gradient(circle, rgba(63,178,251,1) 15%, rgba(111,0,180,1) 48%);
+
 function background() {
    
     
