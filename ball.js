@@ -1,5 +1,4 @@
-import blo from '/blo.js'
-const INIITAL_VELOCITY = .4
+const INIITAL_VELOCITY = .04
 const VELOCITY_INCREASE = 0.000000000001
 const platform = document.querySelector('.platform')
 
@@ -66,6 +65,10 @@ export default class Ball {
         // left and right bouncing down
         if (rect.right <= 0 || rect.left >= window.innerWidth) {
             this.direction.x *= -1
+        }
+
+        if (rect.bottom >= window.innerHeight) {
+           alert('Game over')
         }
 
         // colision with our platform 
