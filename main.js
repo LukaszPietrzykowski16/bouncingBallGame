@@ -2,6 +2,7 @@ import Ball from './ball.js'
 import Block from './block.js'
 import utils from './utils.js'
 import rem from './rem.js'
+import blo from './blo.js'
 import change from './change.js'
 const ball = new Ball(document.querySelector('.ball'))
 const platform = document.querySelector('.platform')
@@ -20,6 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
     const newArr = utils()
     const newChange = change()
+
   
     function update(time){
         if (lastTime != null) {
@@ -27,7 +29,8 @@ window.addEventListener('DOMContentLoaded', () => {
             
             rem(newChange, ball.rect())
             ball.update(delta, newArr)
-            
+            const bruh = blo()
+            console.log(bruh)
             
             
         }

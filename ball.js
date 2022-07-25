@@ -2,8 +2,6 @@ import blo from '/blo.js'
 const INIITAL_VELOCITY = .4
 const VELOCITY_INCREASE = 0.000000000001
 const platform = document.querySelector('.platform')
-const bruh = blo()
-console.log(bruh)
 
 export default class Ball {
     // constructor of the ball
