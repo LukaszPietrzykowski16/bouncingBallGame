@@ -21,11 +21,6 @@ export default class Block {
             const blockDiv = document.createElement("div");
             blockDiv.classList.add(`block${i}`)
             // i can change style later
-            blockDiv.style.backgroundColor = 'rgb(51, 114, 136)' 
-            blockDiv.style.width = '6vw'
-            blockDiv.style.height = '4vh'
-            blockDiv.style.margin = '10px'
-            blockDiv.style.position = 'absolute'
             blockDiv.style.left = `${i * 7.5}vw`
             if (i > 11) {
                 blockDiv.style.top = `6vh`

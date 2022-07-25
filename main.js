@@ -29,7 +29,6 @@ window.addEventListener('DOMContentLoaded', () => {
             const delta = time - lastTime
             rem(newChange, ball.rect())
             ball.update(delta, newChange)
-            console.log(newChange)
             
         }
         lastTime = time

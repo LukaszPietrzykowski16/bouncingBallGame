@@ -1,5 +1,5 @@
 const INIITAL_VELOCITY = .04
-const VELOCITY_INCREASE = 0.000000000001
+const VELOCITY_INCREASE = 0.0000001
 const platform = document.querySelector('.platform')
 
 export default class Ball {
@@ -68,7 +68,7 @@ export default class Ball {
         }
 
         if (rect.bottom >= window.innerHeight) {
-           alert('Game over')
+            
         }
 
         // colision with our platform 
