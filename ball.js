@@ -2,6 +2,7 @@ const INIITAL_VELOCITY = .04
 const VELOCITY_INCREASE = 0.0000001
 const platform = document.querySelector('.platform')
 const won = document.querySelector('#won')
+const minions = document.querySelector('.minions')
 
 export default class Ball {
     // constructor of the ball

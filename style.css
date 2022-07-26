@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 :root {
@@ -48,7 +49,7 @@ div {
 }
 
 .platform {
-    --platfposit: 0;
+    --platfposit: 200px;
     --platfposit2: 0;
     background-color: #c7c7c7;
     position: absolute;
@@ -62,6 +63,16 @@ div {
     border: 2.5px solid rgb(32, 29, 29);
 }
 
+.minions {
+    width: 400px;
+    height: 200px;
+    margin-bottom: 40px;
+}
+
+#minions img  {
+    width: 100%;
+}
+
 .game {
     position: absolute;
     left: 50%;
@@ -72,12 +83,43 @@ div {
     width: 50vw;
     height: 40vh;
     background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .hide {
     display: none;
 }
 
+#won {
+    text-align: center;
+    font-size: 3em;
+    width: 100%;
+    color: rgb(38, 38, 38);
+}
+
+#points {
+    text-align: center;
+    font-size: 2em;
+    width: 100%;
+    font-weight: 100;
+}
+
+button {
+    width: 90%;
+    background-color: rgb(38, 38, 38);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    border-radius: 5px;
+  
+}
 
 @keyframes change {
     0% {
