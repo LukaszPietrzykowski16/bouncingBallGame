@@ -16,10 +16,10 @@
 body {
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(45deg, #d84848, #d88448, #d8c748, #add848, #4fd848, #48d6d8, #4856d8, #7148d8, #d848b2, #d84848);
-    background-size: 1000% 1000%;
+    background-image: linear-gradient(45deg,#ba2f2f, #2f34ba, #2fba3fe9);
+    background-size: 400% 400%;
     overflow: hidden;
-    animation: change 20s ease-in-out infinite;
+    animation: change 10s ease-in-out infinite;
 }
 
 div {
