@@ -1,6 +1,7 @@
 const INIITAL_VELOCITY = .04
 const VELOCITY_INCREASE = 0.0000001
 const platform = document.querySelector('.platform')
+const won = document.querySelector('#won')
 
 export default class Ball {
     // constructor of the ball
@@ -68,7 +69,8 @@ export default class Ball {
         }
 
         if (rect.bottom >= window.innerHeight) {
-            
+        
+            gameOver(blocks.length)
         }
 
         // colision with our platform 
@@ -83,14 +85,11 @@ export default class Ball {
             this.direction.y *= -1
            
         }
-    
-        /*
-        if (test.some(r => console.log(r))) {
-            
-           
+        if (blocks.length == 0){
+            gameOver(blocks.length)
         }
-      */
     }
+   
    
 }
 
@@ -109,3 +108,16 @@ function isColision(rect1, rect2){
      )
 }
 
+function gameOver(number) {
+    platform.style.left = '-150px';
+    document.querySelector('.game').classList.remove('hide')
+    if (number === 0) {
+        won.innerHTML = 'You Won!'
+        points.innerHTML = `Points: ${77 - number}`
+    } else {
+        won.innerHTML = 'Try again!'
+        points.innerHTML = `Points: ${77 - number}`
+    }
+   
+    
+}

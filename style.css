@@ -62,6 +62,22 @@ div {
     border: 2.5px solid rgb(32, 29, 29);
 }
 
+.game {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    z-index: 5;
+    width: 50vw;
+    height: 40vh;
+    background-color: white;
+}
+
+.hide {
+    display: none;
+}
+
 
 @keyframes change {
     0% {
