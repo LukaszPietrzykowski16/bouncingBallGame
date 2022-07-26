@@ -5,7 +5,7 @@
 }
 
 :root {
-    --firstValue: ;
+    --firstValue: 31;
     --secondValue: 255;
     --thirdValue: 98;
     --forthValue: 30;
@@ -16,8 +16,10 @@
 body {
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(45deg, rgb(var(--firstValue), var(--secondValue), var(--thirdValue)), rgb(var(--forthValue), var(--fifthValue), var(--sixthValue)));
+    background-image: linear-gradient(45deg, #d84848, #d88448, #d8c748, #add848, #4fd848, #48d6d8, #4856d8, #7148d8, #d848b2, #d84848);
+    background-size: 1000% 1000%;
     overflow: hidden;
+    animation: change 20s ease-in-out infinite;
 }
 
 div {
@@ -61,12 +63,14 @@ div {
 }
 
 
-
-
-#colors,  #colors2{
-    background-color: rgb(200, 200, 200);
-    border:rgb(32, 29, 29) 4px solid;
-    width: 10vw;
-    height: 4vh;
-    margin: 10px;
+@keyframes change {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
 }

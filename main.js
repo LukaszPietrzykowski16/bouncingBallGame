@@ -1,7 +1,6 @@
 import Ball from './ball.js'
 import Block from './block.js'
 import rem from './rem.js'
-import background from './background.js'
 import change from './change.js'
 const ball = new Ball(document.querySelector('.ball'))
 const platform = document.querySelector('.platform')
@@ -26,7 +25,6 @@ window.addEventListener('DOMContentLoaded', () => {
   
     function update(time){
         if (lastTime != null) {
-            background()
             const delta = time - lastTime
             rem(newChange, ball.rect())
             ball.update(delta, newChange)
