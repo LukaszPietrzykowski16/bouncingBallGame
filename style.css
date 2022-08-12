@@ -137,4 +137,8 @@ button {
     .platform {
         width: 16vw;
     }
+
+    .game {
+        width: 80vw;
+    }
 }
