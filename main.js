@@ -14,13 +14,7 @@ let lastTime
 
 window.addEventListener('DOMContentLoaded', () => {
     blocks1.createBlock()
-    
-
     const newChange = change()
-
-
-    
-  
     function update(time){
         if (lastTime != null) {
             const delta = time - lastTime

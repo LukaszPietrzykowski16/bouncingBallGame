@@ -17,6 +17,7 @@ function change() {
         // pushing array with rect metod to the arr array
         arr.push(block.rectBlocks())
     }
+    console.log(arr)
     return arr
     
 }

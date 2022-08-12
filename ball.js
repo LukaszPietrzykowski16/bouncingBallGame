@@ -65,10 +65,11 @@ export default class Ball {
             this.direction.y *= -1
         }
         // left and right bouncing down
-        if (rect.right <= 0 || rect.left >= window.innerWidth) {
+        // what is diffrence between window.screen.width and window.innerWidth it's about screen pixels and logical pixels
+        if (rect.right <= 0 || rect.left >= window.screen.width) {
             this.direction.x *= -1
         }
-
+        
         if (rect.bottom >= window.innerHeight) {
         
             gameOver(blocks.length)
